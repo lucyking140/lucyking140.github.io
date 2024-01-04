@@ -28,6 +28,100 @@
   color: #61dafb;
 }
 
+.content {
+  background-color: #DDE5B6;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #6C584C;
+  text-align: left;
+  padding: 5px 25px;
+  font-family: 'Helvetica', 'sans-serif';
+  white-space: pre-line;
+}
+
+.content img {
+  width: 75%;
+  padding: 0px;
+  border-radius: 25px;
+  align-items: center;
+}
+
+.project img {
+  width: 100%;
+  height: 350px;
+  padding: 0px;
+  border-radius: 25px;
+  box-shadow: 0px 4px 50px 0px #ADC178;
+}
+
+.headshot {
+  width: 40%;
+  height: 200px;
+  float: right;
+  padding: 15px 15px;
+}
+
+.project {
+  background-color: #DDE5B6;
+  position: relative;
+  text-align: center;
+}
+
+.project title {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  color: #6C584C;
+  display: block;
+  font-size: calc(25px + 2vmin);
+  font-weight: bold;
+  font-family: 'Helvetica', 'sans-serif';
+}
+
+/* navbar */
+.navbar {
+  position: fixed;
+  background-color: #ADC178;
+  top: 0;
+  width: 100%;
+  height: 65px;
+  box-shadow: 0px 4px 22px 0px #ADC178;
+}
+
+/* left-hand title */
+.navbar title {
+  float: left;
+  display: block;
+  color: #6C584C;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+  font-size: calc(15px + 2vmin);
+  font-weight: bold;
+  height: 70px;
+  font-family: 'Helvetica', 'sans-serif';
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: right;
+  display: block;
+  color: #6C584C;
+  text-align: center;
+  padding: 16px 25px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #DDE5B6;
+  color: #6C584C;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
