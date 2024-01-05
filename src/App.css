@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #DDE5B6;
 }
 
 .App-logo {
@@ -50,19 +51,104 @@
   align-items: center;
 }
 
+/* for external links */
+.content a {
+  color: #6C584C;
+  text-decoration: none;
+}
+
+.content button {
+  color: #6C584C;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #D0A583;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px 2px 50px 0px #ADC178;
+}
+
+.content button:hover {
+  opacity: 0.8;
+  background-color: #A98467;
+}
+
+/* left-side bar to animate
+.left-animation {
+    z-index: -1;
+    opacity: 1;
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("left-green-edge.png");
+    background-size: cover;
+    background-position: center;
+*/
+
+.skill-list {
+  display: flex;
+  gap: 20px;
+  padding: 0px 20px;
+}
+
+.skill-list skill {
+  border: none;
+  background-color: #ADC178;
+  border-radius: 25px;
+  color: #6C584C; 
+  padding: 5px 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* initial title area of page */
+.title-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px 5px;
+}
+
+.title-box title {
+  font-size: 80px;
+  color: #6C584C;
+  display: block;
+  width: 60%;
+}
+
+/* profile picture */
+.title-box img {
+  border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+  width: 50vmin;
+  height: 50vmin;
+  background: #f09;
+  background-image: linear-gradient(45deg, #3023AE 0%, #f09 100%);
+  box-shadow: -10vmin 10vmin 0 rgba(255,255,255,0.07);
+	animation: morph 10s linear infinite alternate;
+  margin-left: auto; 
+  margin-right: 150px;
+  object-fit: cover;
+  object-position: -50% 20%;
+}
+
+/* animation for the profile picture */
+@keyframes morph {
+  0% {
+    border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+  }
+  100% {
+    border-radius: 40% 60%;
+  }
+}
+
 .project img {
   width: 100%;
   height: 350px;
-  padding: 0px;
+  padding: 0px 0px;
   border-radius: 25px;
   box-shadow: 0px 4px 50px 0px #ADC178;
-}
-
-.headshot {
-  width: 40%;
-  height: 200px;
-  float: right;
-  padding: 15px 15px;
 }
 
 .project {
@@ -74,7 +160,7 @@
 .project title {
   position: absolute;
   bottom: 8px;
-  left: 16px;
+  left: 5px;
   color: #6C584C;
   display: block;
   font-size: calc(25px + 2vmin);
@@ -86,13 +172,18 @@
 .navbar {
   position: fixed;
   background-color: #ADC178;
-  top: 0;
-  width: 100%;
-  height: 65px;
-  box-shadow: 0px 4px 22px 0px #ADC178;
+  top: 2%;
+  left: 4%;
+  width: 90%;
+  height: 55px;
+  border-radius: 25px;
+  padding: 0% 0%;
+  display: flex;
+  align-items: right;
+  justify-content: center;
 }
 
-/* left-hand title */
+/* left-hand title -- NOT currently used, decided i didn't want a title
 .navbar title {
   float: left;
   display: block;
@@ -102,18 +193,21 @@
   text-decoration: none;
   font-size: calc(15px + 2vmin);
   font-weight: bold;
-  height: 70px;
+  height: 65px;
   font-family: 'Helvetica', 'sans-serif';
 }
+*/
 
 /* Links inside the navbar */
 .navbar a {
-  float: right;
-  display: block;
   color: #6C584C;
   text-align: center;
-  padding: 16px 25px;
+  font-size: 18px;
   text-decoration: none;
+  height: 100%;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
 }
 
 /* Change background on mouse-over */

@@ -1,11 +1,17 @@
 import React from "react";
 import '/Users/lucyking/Projects/portfolio/lk-portfolio/src/App.css';
  
-const ProjectPage = ({title, desc, skillList, photo1, photo2, photo3}) => {
+const ProjectPage = ({title, desc, skillList, url, github, photo1, photo2, photo3}) => {
     return (
         <div className = "content">
 
             <h1>{title}</h1>
+
+            <div style={{ display: 'flex', gap: '20px' }} >
+                <button> <a href={url}> View the site </a></button>
+                <button> <a href={github}> Github Repo </a></button>
+            </div>
+            
 
             <h3> Tools Used:  {skillList} </h3>
 
