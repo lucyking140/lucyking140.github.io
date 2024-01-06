@@ -15,15 +15,14 @@ function App() {
 
   const { scrollYProgress } = useScroll()
 
-  //<animated.div style={{ opacity: scrollYProgress }}>
   return (
    
         <div className="App">
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />  
-              <Route path="lanternDie" element={<ProjectPage title="Lantern Die" desc = {ld_desc} url = "https://lantern-di3-0504b6bd8222.herokuapp.com/" github = "https://github.com/lucyking140/lantern-di3" skillList = "Django, HTML/CSS, PostgreSQL, AWS S3" photo1 = "./LD_1.png" photo2 = "./LD_2.png" photo3 = "./LD_3.png"/>} />
-              <Route path="auctionAlchemy" element={<ProjectPage title="Auction Alchemy" desc = {aa_desc} url="http://35.237.83.178:8111/" github = "https://github.com/lucyking140/AuctionAlchemy" skillList = "Flask, SQLAlchemy, HTML/CSS, PostgreSQL" photo1 = "./AA_1.png" photo2 = "./AA_2.png" photo3 = "./AA_3.png"/>} />
+              <Route path="lanternDie" element={<ProjectPage title="Lantern Die" desc = {ld_desc} url = "https://lantern-di3-0504b6bd8222.herokuapp.com/" github = "https://github.com/lucyking140/lantern-di3" skillList = "Django, HTML/CSS, PostgreSQL, AWS S3, Git" photo1 = "./LD_1.png" photo2 = "./LD_2.png" photo3 = "./LD_3.png"/>} />
+              <Route path="auctionAlchemy" element={<ProjectPage title="Auction Alchemy" desc = {aa_desc} url="http://35.237.83.178:8111/" github = "https://github.com/lucyking140/AuctionAlchemy" skillList = "Flask, SQLAlchemy, HTML/CSS, PostgreSQL, RDBM, Git" photo1 = "./AA_1.png" photo2 = "./AA_2.png" photo3 = "./AA_3.png"/>} />
             </Routes>
           </Router>
         </div>

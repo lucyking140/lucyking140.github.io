@@ -10,14 +10,8 @@ import { animated, useSpring } from '@react-spring/web';
 import "./profilePic.jpg";
 import { HashLink } from 'react-router-hash-link';
 
-/*
-<a href=""> Contact Me </a>
-<a href=""> About </a>
-<a href=""> Projects </a>
-<a href=""> Home </a>
-*/
-
-//Used to show skills on projects when hovering
+const ll_sent = "Social networking site to fight the invasive lantern fly species"
+const aa_sent = "Interactive database of fine art sales from major auction houses"
  
 const Home = () => {
     
@@ -26,9 +20,9 @@ const Home = () => {
     <div>
 
         <div className="navbar">
-          <a> <HashLink smooth to="/#about"> About Me </HashLink> </a>
+          <a> <HashLink smooth to="/#about"> About </HashLink> </a>
           <a> <HashLink smooth to="/#projects"> Projects </HashLink> </a>
-          <a> <HashLink smooth to="/#contact"> Contact Me </HashLink> </a>
+          <a> <HashLink smooth to="/#contact"> Contact </HashLink> </a>
         </div>
 
         <br />
@@ -37,7 +31,7 @@ const Home = () => {
 
         <div className = "content">
             <div class = "title-box" id="title">
-                <title> Hello, <br /> I'm Lucy </title>
+                <title> Hello, I'm Lucy </title>
                 <img src="./profilePic.jpg" />
             </div>
             
@@ -45,7 +39,7 @@ const Home = () => {
 
             <h3> Primary Technical Skills </h3>
             
-            <div style={{ padding: '0px 0px', }}>
+            <div style={{ padding: '20px 0px 20px 0px', }}>
                 <div class = "skill-list">
                     <skill> Web Development </skill>
                     <skill> Relational Database Management </skill>
@@ -61,24 +55,26 @@ const Home = () => {
                     <skill> HTML/CSS </skill>
                 </div>
             </div>
+            
+            <h3 id="projects"> Projects </h3>
+
+            <div className = "project-list">
+                <Link to="/lanternDie"> <Project title="Lantern Die" desc = {ll_sent} > </Project> </Link>
+                <Link to="/auctionAlchemy"> <Project title="AuctionAlchemy" desc = {aa_sent}> </Project> </Link>
+            </div> 
+
+            <br />
 
             <h3 id="contact"> Contact Me </h3>
-            <div style={{ display: 'flex', gap: '20px' }} >
+            <div style={{ display: 'flex', gap: '20px', padding: '20px 0px' }} >
                 <button> <a href="https://github.com/lucyking140" target="_blank" >GitHub</a> </button>
                 <button> <a href="https://www.linkedin.com/in/lucyking140/" target="_blank" >Linkedin</a></button>
                 <button> <a href="mailto:lk2936@columbia.edu" > Email Me </a> </button>
             </div>
-            
-            <h3 id="projects"> Projects </h3>
-            <div className = "projects">
-                <Link to="/lanternDie"> <Project title="Lantern Die" > </Project> </Link>
-                <br />
-                <Link to="/auctionAlchemy"> <Project title="AuctionAlchemy"> </Project> </Link>
-            </div> 
-            <Outlet />
 
+            <br />
+            <h3> More About Me </h3>
             <div className="content" id="about">
-                <h3> More About Me </h3>
                 <strong> Relevant Coursework: </strong>
                 <ul>
                     <li>Data Structures (Teaching Assistant) </li>
@@ -114,7 +110,7 @@ const Home = () => {
     );
 };
 
-function Project({ title }) {
+function Project({ title, desc }) {
     const [showText, setShowText] = React.useState(false);
   
     const [springProps, api] = useSpring(() => ({
@@ -125,9 +121,8 @@ function Project({ title }) {
     const handleMouseOver = () => {
       setShowText(true);
       api.start({
-        opacity: 0.8,
         //y: -10,
-        scale: 1.005,
+        scale: 1.008,
       });
     };
   
@@ -145,8 +140,10 @@ function Project({ title }) {
       <div className="project" onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
         <animated.div style={{ ...springProps, cursor: 'pointer' }}>
           <img src={`./${title.toLowerCase()}_cover.png`} alt={title} />
-          <title>{title} </title> 
-
+          <caption>
+            <div className="project-title"> {title}  </div>
+            {desc}
+          </caption> 
         </animated.div>
       </div>
     );
@@ -155,31 +152,5 @@ function Project({ title }) {
 function showskills({skills}) {
 
 }
-
-/*
-const [showText, setShowText] = useState(false)
-const handleMouseEnter = e => {
-    e.target.style.background = "grey"
-    setShowText(true)
-    }
-const handleMouseLeave = e => {
-    e.target.style.background = "maroon"
-    setShowText(false)
-}
-
-return (
-    <div className="App">
-        <button
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="button"
-        >
-        Hover over me
-        </button>
-        {showText && <p className="message">Now you can see me!</p>}
-    </div>
-)
-
-*/
  
 export default Home;

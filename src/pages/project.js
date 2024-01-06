@@ -6,8 +6,9 @@ import Caro from "/Users/lucyking/Projects/portfolio/lk-portfolio/src/components
 const ProjectPage = ({title, desc, skillList, url, github, photo1, photo2, photo3}) => {
     return (
         <div className = "content">
+            <br />
 
-            <h1>{title}</h1>
+            <h1 id="title">{title}</h1>
 
             <div style={{ display: 'flex', gap: '20px', padding: '15px 0px'}} >
                 <button> <a href={url}> View the site </a></button>
