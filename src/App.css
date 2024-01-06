@@ -73,6 +73,32 @@
   background-color: #A98467;
 }
 
+.carousel {
+  width: 90%;
+  left: 5%;
+}
+
+.carousel img {
+  display: flex;
+  width: 100%;
+  border-radius: 25px;
+  padding: 20px 0px;
+}
+
+/* reps the slide index of the image carousel */
+.carousel button {
+  background-color: #ADC178;
+  height: 5px;
+  width: 100px;
+  padding: 0px 10px;
+  gap: 20px;
+  border-radius: 0px;
+}
+
+.carousel button:hover {
+  background-color: #6C584C;
+}
+
 /* left-side bar to animate
 .left-animation {
     z-index: -1;
