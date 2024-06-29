@@ -7,7 +7,7 @@ import {
     Link
   } from "react-router-dom";
 import { animated, useSpring } from '@react-spring/web';
-import "./profilePic.jpg";
+import "./profilePic_CIF.jpg";
 import { HashLink } from 'react-router-hash-link';
 
 const ll_sent = "Social networking site to fight the invasive lantern fly species"
@@ -31,15 +31,32 @@ const Home = () => {
 
         <div className = "content">
             <div class = "title-box" id="title">
-                <title> Hello, I'm Lucy </title>
+                <title> Hello, I'm Lucy 
+
+                <div style={{ display: 'flex', gap: '20px', padding: '10px 0px'}} >
+                    <button class ="button-28" role="button"> <a href="https://github.com/lucyking140" target="_blank" >GitHub</a> </button>
+                    <button class ="button-28" role="button"> <a href="https://www.linkedin.com/in/lucyking140/" target="_blank" >Linkedin</a></button>
+                    <button class ="button-28" role="button"> <a href="mailto:lk2936@columbia.edu" > Email Me </a> </button>
+                </div>
+
+                </title>
                 <img src="./profilePic.jpg" />
             </div>
             
-            <p> I’m a Computer Science and Math major at Columbia University interested in a career in software engineering, data science, and machine learning. I'm especially interested in the intersections of computer science and economics, and I have a passion for applying my technical skills to public policy. <br /> <br /> I’ve created this page to compile my personal projects. Thank you for checking it out! </p>
+            <p> I’m a Computer Science and Math major at Columbia University interested in a career in software engineering, data science, and machine learning. I'm especially interested in the intersections of computer science and economics, and I have a passion for applying my technical skills to public policy. I’ve created this page to compile my personal projects. Thank you for checking it out! </p>
+            
+            <h3 id="projects" style={{padding: '5px 0px 15px'}}> Projects </h3>
+
+            <div className = "project-list">
+                <Link to="/lanternDie"> <Project title="Lantern Die" desc = {ll_sent} > </Project> </Link>
+                <Link to="/auctionAlchemy"> <Project title="AuctionAlchemy" desc = {aa_sent}> </Project> </Link>
+            </div> 
+
+            <br />
 
             <h3> Primary Technical Skills </h3>
             
-            <div style={{ padding: '20px 0px 20px 0px', }}>
+            <div style={{ padding: '20px 0px 20px', }}>
                 <div class = "skill-list">
                     <skill> Web Development </skill>
                     <skill> Relational Database Management </skill>
@@ -55,26 +72,12 @@ const Home = () => {
                     <skill> HTML/CSS </skill>
                 </div>
             </div>
-            
-            <h3 id="projects"> Projects </h3>
-
-            <div className = "project-list">
-                <Link to="/lanternDie"> <Project title="Lantern Die" desc = {ll_sent} > </Project> </Link>
-                <Link to="/auctionAlchemy"> <Project title="AuctionAlchemy" desc = {aa_sent}> </Project> </Link>
-            </div> 
 
             <br />
 
-            <h3 id="contact"> Contact Me </h3>
-            <div style={{ display: 'flex', gap: '20px', padding: '20px 0px' }} >
-                <button> <a href="https://github.com/lucyking140" target="_blank" >GitHub</a> </button>
-                <button> <a href="https://www.linkedin.com/in/lucyking140/" target="_blank" >Linkedin</a></button>
-                <button> <a href="mailto:lk2936@columbia.edu" > Email Me </a> </button>
-            </div>
-
-            <br />
             <h3> More About Me </h3>
-            <div className="content" id="about">
+            <br />
+            <div className="content" id="about" style={{padding: '0px 10px'}}>
                 <strong> Relevant Coursework: </strong>
                 <ul>
                     <li>Data Structures (Teaching Assistant) </li>
@@ -83,6 +86,7 @@ const Home = () => {
                     <li> Machine Learning for Genomics </li>
                     <li> Advanced Programming (Systems Programming, C, Bash) </li>
                 </ul>
+                <br />
                 
                 <strong> Community Involvement: </strong>
                 <ul>
@@ -94,6 +98,7 @@ const Home = () => {
                     <li> Washington State Representative Emily Randall (youth councilmember) </li>
                     <li> Chicago Justice Project (volunteer data collector and analyst; 2022 Transparency Trailblazer Award for committing >150 hours) </li>
                 </ul>
+                <br />
 
                 <strong> Interests and Hobbies: </strong>
                 <ul>
@@ -103,6 +108,7 @@ const Home = () => {
                     <li> Women/LGBTQ voices in tech </li>
                     <li> Hobbies: running and biking, sewing, pacific northwest hiking </li>
                 </ul>
+                <br />
             </div>
         </div>
 
@@ -111,42 +117,16 @@ const Home = () => {
 };
 
 function Project({ title, desc }) {
-    const [showText, setShowText] = React.useState(false);
-  
-    const [springProps, api] = useSpring(() => ({
-      opacity: 1,
-      y: 0,
-    }));
-  
-    const handleMouseOver = () => {
-      setShowText(true);
-      api.start({
-        //y: -10,
-        scale: 1.008,
-      });
-    };
-  
-    const handleMouseLeave = () => {
-      setShowText(false);
-      api.start({
-        opacity: 1,
-        //y: 0,
-        scale: 1,
-      });
-    };
-  
-    //          <title> {showText && <p className="message">Now you can see me!</p>} </title>
-    return (
-      <div className="project" onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
-        <animated.div style={{ ...springProps, cursor: 'pointer' }}>
+    
+   return (
+      <div className="project">
           <img src={`./${title.toLowerCase()}_cover.png`} alt={title} />
           <caption>
             <div className="project-title"> {title}  </div>
             {desc}
           </caption> 
-        </animated.div>
       </div>
-    );
+   );
   }
   
 function showskills({skills}) {

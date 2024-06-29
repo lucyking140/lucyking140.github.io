@@ -14,6 +14,33 @@
   }
 }
 
+/*
+Adding fonts
+*/
+@font-face {
+  font-family: 'Plain';
+  src: url('./fonts/Plain-Regular.woff2') format('woff2'),
+      url('./fonts/Plain-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Plain';
+  src: url('./fonts/Plain-Light.woff2') format('woff2'),
+      url('./fonts/Plain-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Plain';
+  src: url('./fonts/Plain-Bold.woff2') format('woff2'),
+      url('./fonts/Plain-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -39,8 +66,8 @@
   font-size: calc(10px + 2vmin);
   color: #6C584C;
   text-align: left;
-  padding: 5px 25px;
-  font-family: 'Verdana', 'sans-serif';
+  padding: 0px 50px;
+  font-family: 'Plain'; /*'Verdana', 'sans-serif';*/
   white-space: pre-line;
   font-weight: 500;
 }
@@ -58,24 +85,56 @@
   text-decoration: none;
 }
 
+/* INSERTED CSS 
+<button class="button-28" role="button">Button 28</button>
+SOURCE: https://getcssscan.com/css-buttons-examples
+*/
 .content button {
-  color: #6C584C;
-  width: 150px;
-  height: 40px;
-  font-size: 20px;
-  background-color: #D0A583;
-  border: none;
-  border-radius: 25px;
-  /*box-shadow: 0px 2px 50px 0px #ADC178; */
+  appearance: none;
+  background-color: #BDD187; /*#ADC178;/*#bac198;/*transparent;*/
+  border: 2px solid #6C584C;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 22px;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  /*min-height: 50px;*/
+  min-width: 0;
+  outline: none;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.content button:disabled {
+  pointer-events: none;
 }
 
 .content button:hover {
-  opacity: 0.8;
-  background-color: #A98467;
+  color: #fff;
+  background-color: #BDD187;
+  /*box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;*/
+  transform: translateY(-2px);
+}
+
+.content button:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
 
 .content h3 {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .carousel {
@@ -90,33 +149,24 @@
   padding: 20px 0px;
 }
 
-/* reps the slide index of the image carousel */
-.carousel button {
-  background-color: #ADC178;
-  height: 5px;
+.carousel-indicators button {
+  background-color: #BDD187;
   width: 100px;
-  padding: 0px 10px;
-  gap: 20px;
+  height: 5px;
+  line-height: 12px;
   border-radius: 0px;
+  border: 0px;
 }
 
-.carousel button:hover {
-  background-color: #6C584C;
+/* Active indicator styles */
+.carousel-indicators .active {
+  border: 2px solid #6C584C;
 }
 
-/* left-side bar to animate
-.left-animation {
-    z-index: -1;
-    opacity: 1;
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-image: url("left-green-edge.png");
-    background-size: cover;
-    background-position: center;
-*/
+/* Hover effect */
+.carousel-indicators li:hover {
+  background-color: #ADC178; /* Change color on hover */
+}
 
 .skill-list {
   display: flex;
@@ -125,8 +175,8 @@
 }
 
 .skill-list skill {
-  border: none;
-  background-color: #ADC178;
+  border: 2px solid #6C584C;
+  background-color: #BDD187;
   border-radius: 25px;
   color: #6C584C; 
   padding: 2px 20px;
@@ -148,6 +198,7 @@
   display: block;
   width: 60%;
   font-weight: 500;
+  padding: 0px 0px;
 }
 
 /* profile picture */
@@ -159,10 +210,11 @@
   background-image: linear-gradient(45deg, #ADC178 0%, #6C584C 100%);
   box-shadow: -10vmin 10vmin 0 rgba(255,255,255,0.07);
 	animation: morph 10s linear infinite alternate;
-  margin-left: auto; 
-  margin-right: 150px;
+  margin-left: 50px; /*auto; */
+  margin-right: 100px;
   object-fit: cover;
   object-position: -50% 20%;
+  border: 2px solid #6C584C;
 }
 
 /* animation for the profile picture */
@@ -210,6 +262,7 @@
   row-gap: 25px;
   align-items: center;
   justify-content: center;
+  padding: 5px 25px;
 }
 
 .project {
@@ -217,7 +270,13 @@
   width: 100%;
   height: 350px;
   border-radius: 25px;
+  border: 2px solid #6C584C;
   box-shadow: 0px 2px 5px 0px #ADC178;
+  will-change: transform;
+}
+
+.project:hover {
+  transform: translateY(-2px);
 }
 
 .project img {
@@ -245,12 +304,12 @@
   color: #6C584C;
   padding: 10px 0px;
   font-size: 25px;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .navbar {
   position: fixed;
-  background-color: #ADC178;
+  background-color: #BDD187;
   top: 2%;
   left: 4%;
   width: 90%;
@@ -261,6 +320,7 @@
   align-items: right;
   justify-content: center;
   z-index: 3;
+  border: 2px solid #6C584C;
 }
 
 /* left-hand title -- NOT currently used, decided i didn't want a title
@@ -282,7 +342,8 @@
 .navbar a {
   color: #6C584C;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 500;
   text-decoration: none;
   height: 100%;
   padding: 0px 20px;
@@ -292,8 +353,9 @@
 
 /* Change background on mouse-over */
 .navbar a:hover {
-  background: #DDE5B6;
-  color: #6C584C;
+  background: transparent;
+  color: #54443a;
+  transform: translateY(-1px);
 }
 
 @keyframes App-logo-spin {

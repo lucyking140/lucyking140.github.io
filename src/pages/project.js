@@ -1,11 +1,11 @@
 import React from "react";
-import '/Users/lucyking/Projects/portfolio/lk-portfolio/src/App.css';
+import '../App.css';
 import Caro from "/Users/lucyking/Projects/portfolio/lk-portfolio/src/components/Caro"
 
  
 const ProjectPage = ({title, desc, skillList, url, github, photo1, photo2, photo3}) => {
     return (
-        <div className = "content">
+        <div className = "content" style={{padding: '0px 40px'}}>
             <br />
 
             <h1 id="title">{title}</h1>
@@ -19,7 +19,12 @@ const ProjectPage = ({title, desc, skillList, url, github, photo1, photo2, photo
 
             {desc}
 
+            <br />
+            <br />
+
             <Caro photo1={photo1} photo2={photo2} photo3={photo3} />
+
+            
 
             <div className="content"> </div>
         </div>
