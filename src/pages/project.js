@@ -11,7 +11,7 @@ const ProjectPage = ({title, desc, skillList, url, github, photo1, photo2, photo
             <h1 id="title">{title}</h1>
 
             <div style={{ display: 'flex', gap: '20px', padding: '15px 0px'}} >
-                <button> <a href={url}> View the site </a></button>
+                { title !== "Auction Alchemy" && <button><a href={url}> View the site </a></button> }
                 <button> <a href={github}> Github Repo </a></button>
             </div>
             
