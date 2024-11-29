@@ -3,6 +3,11 @@
   background-color: #DDE5B6;
 }
 
+.proj-title{
+  font-size: calc(40px + 2vmin);
+  font-weight: 800;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -117,6 +122,19 @@ SOURCE: https://getcssscan.com/css-buttons-examples
   will-change: transform;
 }
 
+.content .back-button{
+  min-width: 75px;
+  font-size: 12px;
+  padding: 0px 0px 0px 0px;
+  height: 40px;
+}
+
+.content .title-back-button{
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+}
+
 .content button:disabled {
   pointer-events: none;
 }
@@ -172,16 +190,20 @@ SOURCE: https://getcssscan.com/css-buttons-examples
   display: flex;
   gap: 20px;
   padding: 0px 20px;
+  text-align: center;
 }
 
 .skill-list skill {
-  border: 2px solid #6C584C;
-  background-color: #BDD187;
+  /*border: 2px solid #6C584C;*/
+  /* background-color: #BDD187; */
+  background-color: #6C584C;
   border-radius: 25px;
-  color: #6C584C; 
+  /* color: #6C584C;  */
+  color: #DDE5B6;
   padding: 2px 20px;
   text-align: center;
   font-size: 18px;
+  height: 35px;
 }
 
 /* initial title area of page */

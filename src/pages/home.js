@@ -12,7 +12,8 @@ import { HashLink } from 'react-router-hash-link';
 
 const ll_sent = "Social networking site to fight the invasive lantern fly species"
 const aa_sent = "Interactive database of fine art sales from major auction houses"
- 
+const census_sent = "Web app for interactive query building built as a Coding It Forward fellow at the U.S. Census Bureau"
+
 const Home = () => {
     
     return (
@@ -33,7 +34,7 @@ const Home = () => {
             <div class = "title-box" id="title">
                 <title> Hello, I'm Lucy 
 
-                <div style={{ display: 'flex', gap: '20px', padding: '10px 0px'}} >
+                <div style={{ display: 'flex', gap: '30px', padding: '10px 0px'}} >
                     <button class ="button-28" role="button"> <a href="https://github.com/lucyking140" target="_blank" >GitHub</a> </button>
                     <button class ="button-28" role="button"> <a href="https://www.linkedin.com/in/lucyking140/" target="_blank" >Linkedin</a></button>
                     <button class ="button-28" role="button"> <a href="mailto:lk2936@columbia.edu" > Email Me </a> </button>
@@ -48,6 +49,7 @@ const Home = () => {
             <h3 id="projects" style={{padding: '5px 0px 15px'}}> Projects </h3>
 
             <div className = "project-list">
+                <Link to="/census"> <Project title="International Trade API Query Builder" desc = {census_sent}> </Project> </Link>
                 <Link to="/lanternDie"> <Project title="Lantern Die" desc = {ll_sent} > </Project> </Link>
                 <Link to="/auctionAlchemy"> <Project title="AuctionAlchemy" desc = {aa_sent}> </Project> </Link>
             </div> 
