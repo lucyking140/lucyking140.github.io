@@ -69,7 +69,7 @@ const ProjectPage = ({title, desc, skillList, url, github, photo1, photo2, photo
                 
                 <div style={{width: '100%'}}> 
                     <h2> Demo Video: </h2>
-                    <ReactPlayer playing="true" controls="true" style={{ width: '100%', padding: '0px 0px 20px 0px'}} url='../UNICC_final_demo.mov' /> 
+                    <ReactPlayer playing="true" controls="true" style={{ width: '100%', padding: '0px 0px 20px 0px'}} url='../unicc_final_demo.mp4' /> 
 
                     {/* from https://github.com/ajhenry/react-google-slides?tab=readme-ov-file */}
                     <h2 style={{padding: '0px 0px 10px 0px'}}> Break Through Tech AI Studio Presentation: </h2>
