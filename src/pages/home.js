@@ -13,6 +13,7 @@ import { HashLink } from 'react-router-hash-link';
 const ll_sent = "Social networking site to fight the invasive lantern fly species"
 const aa_sent = "Interactive database of fine art sales from major auction houses"
 const census_sent = "Web app for interactive query building built as a Coding It Forward fellow at the U.S. Census Bureau"
+const unicc_sent = "Chatbot built with LLaMA and fine-tuned with LoRA and RAG as a Break Through Tech Fellow"
 
 const Home = () => {
     
@@ -34,7 +35,7 @@ const Home = () => {
             <div class = "title-box" id="title">
                 <title> Hello, I'm Lucy 
 
-                <div style={{ display: 'flex', gap: '30px', padding: '10px 0px'}} >
+                <div style={{ display: 'flex', gap: '30px', padding: '20px 0px'}} >
                     <button class ="button-28" role="button"> <a href="https://github.com/lucyking140" target="_blank" >GitHub</a> </button>
                     <button class ="button-28" role="button"> <a href="https://www.linkedin.com/in/lucyking140/" target="_blank" >Linkedin</a></button>
                     <button class ="button-28" role="button"> <a href="mailto:lk2936@columbia.edu" > Email Me </a> </button>
@@ -46,17 +47,18 @@ const Home = () => {
             
             <p> I’m a Computer Science and Math major at Columbia University interested in a career in software engineering, data science, and machine learning. I'm especially interested in the intersections of computer science and economics, and I have a passion for applying my technical skills to public policy. I’ve created this page to compile my personal projects. Thank you for checking it out! </p>
             
-            <h3 id="projects" style={{padding: '5px 0px 15px'}}> Projects </h3>
+            <h2 id="projects" style={{padding: '5px 0px 15px'}}> Projects </h2>
 
             <div className = "project-list">
                 <Link to="/census"> <Project title="International Trade API Query Builder" desc = {census_sent}> </Project> </Link>
+                <Link to="/unicc"> <Project title="UNICC Climate Change Chatbot" desc = {unicc_sent}> </Project> </Link>
                 <Link to="/lanternDie"> <Project title="Lantern Die" desc = {ll_sent} > </Project> </Link>
                 <Link to="/auctionAlchemy"> <Project title="AuctionAlchemy" desc = {aa_sent}> </Project> </Link>
             </div> 
 
             <br />
 
-            <h3> Primary Technical Skills </h3>
+            <h2> Primary Technical Skills </h2>
             
             <div style={{ padding: '20px 0px 20px', }}>
                 <div class = "skill-list">
@@ -77,7 +79,7 @@ const Home = () => {
 
             <br />
 
-            <h3> More About Me </h3>
+            <h2> More About Me </h2>
             <br />
             <div className="content" id="about" style={{padding: '0px 10px'}}>
                 <strong> Relevant Coursework: </strong>

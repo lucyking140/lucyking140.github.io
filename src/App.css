@@ -155,6 +155,10 @@ SOURCE: https://getcssscan.com/css-buttons-examples
   font-weight: 500;
 }
 
+.content h2 {
+  font-weight: 700;
+}
+
 .carousel {
   width: 90%;
   left: 5%;

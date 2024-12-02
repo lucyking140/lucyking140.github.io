@@ -27,7 +27,6 @@ const ProjectPage = ({title, desc, skillList, url, github, photo1, photo2, photo
             </div>
 
             <div class="skill-list" style={{padding: '15px 0px 0px 0px'}}>
-                <h3> Tools Used: </h3>
                 {skillList.map((str, index) => (
                     <skill>
                     {str}
@@ -55,7 +54,7 @@ const ProjectPage = ({title, desc, skillList, url, github, photo1, photo2, photo
                     <h2 style={{padding: '0px 0px 10px 0px'}}> Intern Demo Day Presentation: </h2>
                     <ReactGoogleSlides
                         width={'100%'}
-                        slidesLink="https://docs.google.com/presentation/d/1mkktCGpYPDUMlb1e_5q1xhjUQDEmMimBT1_genQKeHk/edit#slide=id.g3e5ee9627c_7_1"
+                        slidesLink="https://docs.google.com/presentation/d/1nMllqrMBkGMRkuQC1VNjDgN48LXD2vJjlZrBmfwT59Y/edit#slide=id.g3e5ee9627c_7_1"
                         slideDuration={5}
                         position={0}
                         showControls={'True'}
@@ -65,7 +64,29 @@ const ProjectPage = ({title, desc, skillList, url, github, photo1, photo2, photo
                 </div>
             }
 
-            { title !==  "Coding It Forward: International Trade API Query Builder" && 
+            {/* Displaying slides and demo for BTAI project */}
+            { title == "Break Through Tech: Chatbot for the UN Economic Council for Europe's Climate Change Database" && 
+                
+                <div style={{width: '100%'}}> 
+                    <h2> Demo Video: </h2>
+                    <ReactPlayer playing="true" controls="true" style={{ width: '100%', padding: '0px 0px 20px 0px'}} url='../UNICC_demo.mov' /> 
+
+                    {/* from https://github.com/ajhenry/react-google-slides?tab=readme-ov-file */}
+                    <h2 style={{padding: '0px 0px 10px 0px'}}> Break Through Tech AI Studio Presentation: </h2>
+                    <ReactGoogleSlides
+                        width={'100%'}
+                        slidesLink="https://docs.google.com/presentation/d/1gmSbhlCR3CIWdqWZgVO8u7OE4kVqYFTAzqklc1O0d7s/edit#slide=id.g316ff678b04_0_0"
+                        slideDuration={5}
+                        position={0}
+                        showControls={'True'}
+                        loop
+                    />
+
+                </div>
+            
+            }
+
+            { title !==  "Coding It Forward: International Trade API Query Builder" && title !== "Break Through Tech: Chatbot for the UN Economic Council for Europe's Climate Change Database" && 
             
                 <Caro photo1={photo1} photo2={photo2} photo3={photo3} />
 
